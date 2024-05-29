@@ -1,5 +1,6 @@
 package com.javaexamples;
 //1)the program prompts the user to enter their age and the time of the movie. Based on this input, it determines the price of the movie ticket.
+
 //
 //The conditions are as follows:
 //
@@ -22,23 +23,20 @@ public class MoviePrice {
 
 		System.out.println("Enter Your Age: ");
 		age = sc.nextInt();
-		//checking for age below 5 and above 60
+		
+		System.out.println("Enter Your Movie Time: ");
+		time = sc.nextInt();
+		
 		if (age <= 5 || age >= 60) {
 			System.out.println("You are a Senior Setizen So you are eligible for free Ticket");
-			seniorSetizen = true;
-		}
-
-		while (!seniorSetizen) {
-			System.out.println("Enter Your Movie Time: ");
-			time = sc.nextInt();
-			if (time <= 4) {
-				PRICE += 50;
-
-			} else if (time >= 5 && time <= 9) {
-				PRICE += 100;
-			}
+		}else if (time <= 4) {
+			PRICE += 50;
+			System.out.println("Pay " + PRICE + " For Your movie ticket.");
+		} else if (time >= 5 && time <= 9) {
+			PRICE += 100;
 			System.out.println("Pay " + PRICE + " For Your movie ticket.");
 		}
+		
 
 	}
 
